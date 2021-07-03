@@ -1,0 +1,16 @@
+{
+  "name": "event-enricher",
+  "version": "1.0.0",
+  "dependencies": {
+    "winston": "^3.3.3",
+    "aws-xray-sdk-core": "1.1.2"
+  },
+  "devDependencies": {
+    "aws-sdk": "^2.701.0",
+    "node-lambda": "^0.17.0"
+  },
+  "scripts": {
+    "clean": "rm -rf build",
+    "package": "npm run clean && node-lambda package --packageDirectory build --excludeGlobs terraform --functionName $FUNCTION_NAME"
+  }
+}

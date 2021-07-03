@@ -1,8 +1,11 @@
 # Local .terraform directories
 **/.terraform/*
-# .tfstate files
-*.tfstate
+# .tfstate backup files
 *.tfstate.*
+*.tfstate
 
 .idea/
-*iml
+*.iml
+*/package-lock.json
+*/node_modules
+*/build
