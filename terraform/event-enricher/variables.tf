@@ -5,3 +5,7 @@ variable "sns_topic_arn" {
 variable "sqs_queue_arn" {
   type = string
 }
+
+variable "attributes_manager_url" {
+  type = string
+}

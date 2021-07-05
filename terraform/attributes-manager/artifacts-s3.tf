@@ -1,5 +1,5 @@
-resource "aws_s3_bucket" "bucket" {
-  bucket = "meetup-xray-demo-events"
+resource "aws_s3_bucket" "eb_artifacts" {
+  bucket = "meetup-xray-demo-eb-artifacts"
   acl    = "private"
 
   server_side_encryption_configuration {

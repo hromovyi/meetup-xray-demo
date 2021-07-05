@@ -16,8 +16,9 @@ resource "aws_lambda_function" "function" {
 
   environment {
     variables = {
-      SNS_TOPIC_ARN      = var.sns_topic_arn
-      AWS_XRAY_LOG_LEVEL = "silent"
+      SNS_TOPIC_ARN          = var.sns_topic_arn
+      ATTRIBUTES_MANAGER_URL = var.attributes_manager_url
+      AWS_XRAY_LOG_LEVEL     = "silent"
     }
   }
 }

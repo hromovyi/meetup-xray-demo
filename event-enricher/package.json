@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "dependencies": {
     "winston": "^3.3.3",
-    "aws-xray-sdk-core": "1.1.2"
+    "aws-xray-sdk": "3.3.3",
+    "node-fetch": "^1.1.0"
   },
   "devDependencies": {
     "aws-sdk": "^2.701.0",
