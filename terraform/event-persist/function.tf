@@ -10,6 +10,10 @@ resource "aws_lambda_function" "function" {
     null_resource.build_script
   ]
 
+  tracing_config {
+    mode = "Active"
+  }
+
   environment {
     variables = {
       BUCKET_NAME        = var.bucket_name
