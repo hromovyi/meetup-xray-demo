@@ -1,5 +1,13 @@
+resource "random_string" "suffix" {
+  length  = 10
+  upper   = false
+  special = false
+  number  = false
+  lower   = true
+}
+
 resource "aws_s3_bucket" "bucket" {
-  bucket = "meetup-xray-demo-events"
+  bucket = "meetup-xray-demo-events-${random_string.suffix.result}"
   acl    = "private"
 
   server_side_encryption_configuration {

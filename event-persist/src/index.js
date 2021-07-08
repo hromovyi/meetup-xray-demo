@@ -12,6 +12,11 @@ exports.handler = async (event) => {
 
 async function processRecord(record) {
   const body = record.Sns.Message;
+
+  if (body.includes('error')) {
+    throw new Error('Error found in incoming message');
+  }
+
   const params = {
     Bucket: process.env.BUCKET_NAME,
     Key: `${uuidv4()}.json`,

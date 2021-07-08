@@ -18,6 +18,11 @@ resource "aws_lambda_function" "function" {
   }
 }
 
+resource "aws_lambda_function_event_invoke_config" "config" {
+  function_name          = aws_lambda_function.function.function_name
+  maximum_retry_attempts = 0
+}
+
 resource "aws_cloudwatch_log_group" "log_group" {
   name              = "/aws/lambda/${local.function_name}"
   retention_in_days = 30

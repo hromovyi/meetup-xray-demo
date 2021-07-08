@@ -22,3 +22,15 @@ resource "aws_s3_bucket_object" "deployment" {
 
   depends_on = [null_resource.build_script]
 }
+
+resource "null_resource" "deploy_version" {
+  provisioner "local-exec" {
+    command = <<EOF
+      aws elasticbeanstalk update-environment \
+        --application-name ${aws_elastic_beanstalk_application.attributes_manager.name} \
+        --version-label ${aws_elastic_beanstalk_application_version.deployed_version.name} \
+        --environment-name ${aws_elastic_beanstalk_environment.attributes_manager_environment.name}
+EOF
+  }
+  depends_on = [aws_elastic_beanstalk_application_version.deployed_version]
+}

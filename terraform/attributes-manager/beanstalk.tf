@@ -55,5 +55,5 @@ resource "aws_elastic_beanstalk_application_version" "deployed_version" {
   application = aws_elastic_beanstalk_application.attributes_manager.name
   bucket      = aws_s3_bucket.eb_artifacts.id
   key         = aws_s3_bucket_object.deployment.id
-  name        = "Version, deployed at ${timestamp()}"
+  name        = "Version-${uuid()}"
 }
